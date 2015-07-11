@@ -10,10 +10,12 @@
     <input type="submit">
   </div>
   <div id="output">
+    <table>
   {% for k, v in result.items(): %}
-    <div class="result_item">{{k}} {{v}}</div>
+      <tr><td>{{k}}</td> <td>{{v}}</td></tr>
     {% endfor%}
     </div>
+  </table>
 </form>
 
 </div><!-- end .main -->
