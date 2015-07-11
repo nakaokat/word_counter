@@ -20,15 +20,13 @@ def words():
 
 @app.route('/input', methods=['GET','POST'])
 def input():
+    result={}
     if request.method == 'POST':
         text = request.form['text']
-        result = "<h3>result</h3>"
-        for k, v in main.main(text, main.ignore).items():
-            if v > 1:
-                result += k + " " + str(v)  + "<br>"
-        return render_template("input.html", output=result)
+        result = main.main(text, main.ignore)
+        return render_template("input.html", result=result)
     else:
-        return render_template("input.html")
+        return render_template("input.html", result=result)
 
 
 if __name__ == "__main__":
