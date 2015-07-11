@@ -1,22 +1,22 @@
 {% include "header.html" %}
 
-
+<div class="main">
 <h1>Word Counter</h1>
 
 <form method="post">
   <div id="input">
-    <textarea name="text" id="input_text"></textarea>
+    <textarea name="text" id="input_text" cols="100"></textarea>
     <br>
     <input type="submit">
   </div>
   <div id="output">
   {% for k, v in result.items(): %}
-    <div>{{k}} {{v}}</div>
+    <div class="result_item">{{k}} {{v}}</div>
     {% endfor%}
     </div>
 </form>
 
-
+</div><!-- end .main -->
 {% include "footer.html" %}
 
 
