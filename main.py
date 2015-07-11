@@ -183,7 +183,3 @@ def main(text, ignore):
             result[word] += 1
 
     return result
-
-for k, v in main(news, ignore).items():
-    if v > 1:
-        print k, v
