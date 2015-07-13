@@ -6,14 +6,15 @@
 </div>
   <div class="input_area">
 <form method="post">
-  <div id="input">
-    <textarea name="text" id="input_text" cols="100"></textarea>
+  <div class="input">
+    <h3>Input</h3>
+    <textarea name="text" id="input_text" cols="100" placeholder="Please set your text here."></textarea>
     <br>
-    <input type="submit">
+    <input class="pure-button" type="submit">
   </div>
   </form>
     </div>
-  <div id="output">
+  <div class="output">
     <h3>Result</h3>
     <table>
   {% for k, v in result.items(): %}
