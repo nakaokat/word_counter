@@ -10,7 +10,8 @@ def input():
     if request.method == 'POST':
         text = request.form['text']
         result = main.main(text, main.ignore)
-        return render_template("input.html", result=result)
+        threshold = int(request.form["threshold"])
+        return render_template("input.html", result=result, threshold=threshold)
     else:
         return render_template("input.html", result=result)
 

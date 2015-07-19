@@ -10,6 +10,12 @@
     <h3>Input</h3>
     <textarea name="text" id="input_text" cols="100" placeholder="Please set your text here."></textarea>
     <br>
+    <label>Threshold：</label><select name="threshold">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <br>
     <input class="pure-button" type="submit">
   </div>
   </form>
@@ -18,7 +24,7 @@
     <h3>Result</h3>
     <table>
   {% for k, v in result.items(): %}
-      {% if v > 0:%}
+      {% if v > threshold: %}
       <tr><td>{{k}}</td> <td>{{v}}</td></tr>
       {% endif %}
     {% endfor%}
