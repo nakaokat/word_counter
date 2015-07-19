@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # example
 alice = "For a minute or two she stood looking at the house, and wondering what to do next, when suddenly a footman in livery came running out of the wood--(she considered him to be a footman because he was in livery: otherwise, judging by his face only, she would have called him a fish)--and rapped loudly at the door with his knuckles. It was opened by another footman in livery, with a round face, and large eyes like a frog; and both footmen, Alice noticed, had powdered hair that curled all over their heads. She felt very curious to know what it was all about, and crept a little way out of the wood to listen."
 
@@ -164,22 +165,3 @@ Gone, too, is the notion that every fight is an American fight and along with it
 Barack Obama has instead advocated pragmatism and diplomatic dexterity, trying to steer a path between America being overextended and undercommitted.
 Maybe the overriding challenge for US diplomacy over the next 20 years is to strike the proper balance.
 """
-
-ignore = "a the be is are he she they it to"
-
-def main(text, ignore):
-    """
-    text: str
-    ignore: str
-    return: dict
-    """
-    words = text.split(" ")
-    ignore_words = ignore.split(" ")
-    result = {}
-    for word in words:
-        if word not in ignore_words and word not in result:
-            result[word] = 1
-        elif word not in ignore_words and word in result:
-            result[word] += 1
-
-    return result
