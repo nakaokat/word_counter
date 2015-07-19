@@ -5,11 +5,6 @@ import main
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello():
-    return 'Hello World!'
-
-
 @app.route('/words')
 def words():
     result = ""
@@ -18,7 +13,7 @@ def words():
             result += k + " " + str(v)  + "<br>"
     return result
 
-@app.route('/input', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def input():
     result={}
     if request.method == 'POST':
