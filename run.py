@@ -8,8 +8,9 @@ app = Flask(__name__)
 @app.route('/words')
 def words():
     result = ""
+    threshold = 0
     for k, v in main.main(main.news, main.ignore).items():
-        if v > 1:
+        if v > threshold:
             result += k + " " + str(v)  + "<br>"
     return result
 
