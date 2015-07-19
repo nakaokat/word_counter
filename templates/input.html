@@ -18,7 +18,7 @@
     <h3>Result</h3>
     <table>
   {% for k, v in result.items(): %}
-      {% if v > 2:%}
+      {% if v > 0:%}
       <tr><td>{{k}}</td> <td>{{v}}</td></tr>
       {% endif %}
     {% endfor%}
@@ -29,6 +29,3 @@
   </div>
 </div><!-- end .main -->
 {% include "footer.html" %}
-
-
-
