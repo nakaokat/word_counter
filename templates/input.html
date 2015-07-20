@@ -23,12 +23,12 @@
   <div class="output">
     <h3>Result</h3>
     <table>
-  {% for k, v in result.items(): %}
-      {% if v > threshold: %}
-      <tr><td>{{k}}</td> <td>{{v}}</td></tr>
-      {% endif %}
-    {% endfor%}
-  </table>
+      {% for key in order: %}
+        {% if result[key] > threshold: %}
+          <tr><td>{{ key }}</td> <td>{{ result[key] }}</td></tr>
+        {% endif %}
+      {% endfor %}
+    </table>
   </div>
   <div class="footer">
 
