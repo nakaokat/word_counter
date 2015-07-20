@@ -3,7 +3,7 @@
 ignore = "a the be is are he she they it to"
 no_ignore = ""
 
-def main(text, no_ignore):
+def main(text, ignore):
     """
     text: str
     ignore: str
