@@ -47,10 +47,11 @@ def remove_mark(text):
     words = text.split(" ")
     new_words = []
     for word in words:
-        last = word[-1]
-        if last == "." or last == "," or last == ":" or last == ";":
-            new_words.append(word[0:-1])
-        else:
-            new_words.append(word)
+        if len(word) > 0:
+            last = word[-1]
+            if last == "." or last == "," or last == ":" or last == ";":
+                new_words.append(word[0:-1])
+            else:
+                new_words.append(word)
 
     return " ".join(new_words)
