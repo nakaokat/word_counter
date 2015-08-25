@@ -55,3 +55,25 @@ def remove_mark(text):
                 new_words.append(word)
 
     return " ".join(new_words)
+
+class Main:
+    def __init__(self, text):
+        self.original = text
+        self.words = text.split(" ")
+        self.output = {}
+
+
+    def remove_mark(self):
+        """
+        words リストから、語尾が句読点のものを探してそれをとる
+        :return: none
+        """
+        new_words = []
+        for word in self.words:
+            if len(word) > 0:
+                last = word[-1]
+                if last == "." or last == "," or last == ":" or last == ";":
+                    new_words.append(word[0:-1])
+                else:
+                    new_words.append(word)
+        self.words = new_words
