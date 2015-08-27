@@ -61,6 +61,7 @@ class Main:
         self.original = text
         self.words = text.split(" ")
         self.output = {}
+        self.ignore_words = []
 
 
     def remove_mark(self):
@@ -77,3 +78,48 @@ class Main:
                 else:
                     new_words.append(word)
         self.words = new_words
+
+
+    def output(self):
+        """
+        :return: dict
+        """
+        result = {}
+        for word in self.words:
+            if word not in self.ignore_words and word not in result:
+                result[word] = 1
+            elif word not in self.ignore_words and word in result:
+                result[word] += 1
+
+        return result
+
+
+    def get_original(self):
+        """
+
+        :return: str
+        """
+        return self.original
+
+
+    def get_words(self):
+        """
+        :return: list
+        """
+        return self.words
+
+
+    def set_ignore_words(self, ignore_words):
+        """
+        :param ignore_words:
+        :return: none
+        """
+        self.ignore_words = ignore_words
+
+
+    def get_ignore_words(self):
+        """
+        :return: list
+        """
+        return self.ignore_words
+
