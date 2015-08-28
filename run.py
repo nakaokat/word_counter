@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, redirect
-import main, test
+from main import Main
 app = Flask(__name__)
 
 
@@ -9,9 +9,10 @@ def input():
     result={}
     if request.method == 'POST':
         text = request.form['text']
-        result = main.main(text, main.no_ignore)
+        main = Main(text)
+        result = main.get_output()
         threshold = int(request.form["threshold"])
-        order = main.order(text, main.no_ignore)
+        order = main.get_order()
         return render_template("input.html", result=result, threshold=threshold, order=order)
     else:
         return render_template("input.html", result=result)

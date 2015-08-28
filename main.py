@@ -18,7 +18,6 @@ def main(text, ignore):
             result[word] = 1
         elif word not in ignore_words and word in result:
             result[word] += 1
-
     return result
 
 
@@ -123,3 +122,23 @@ class Main:
         """
         return self.ignore_words
 
+    def get_output(self):
+        """
+
+        :return:
+        """
+        result = {}
+        for word in self.words:
+            if word not in self.ignore_words and word not in result:
+                result[word] = 1
+            elif word not in self.ignore_words and word in result:
+                result[word] += 1
+
+        return result
+
+    def get_order(self):
+        result = []
+        for word in self.words:
+            if word not in self.ignore_words and word not in result:
+                result.append(word)
+        return result
