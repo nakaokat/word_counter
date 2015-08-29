@@ -58,25 +58,28 @@ def remove_mark(text):
 class Main:
     def __init__(self, text):
         self.original = text
-        self.words = text.split(" ")
+        self.mark_removed_text = self.remove_mark(text)
+        self.words = self.mark_removed_text.split(" ")
         self.output = {}
         self.ignore_words = []
 
 
-    def remove_mark(self):
+    def remove_mark(self, text):
         """
-        words リストから、語尾が句読点のものを探してそれをとる
-        :return: none
+        :param text:
+        :return: str, text that marks is removed.
         """
+        words = text.split(" ")
         new_words = []
-        for word in self.words:
+        for word in words:
             if len(word) > 0:
                 last = word[-1]
                 if last == "." or last == "," or last == ":" or last == ";":
                     new_words.append(word[0:-1])
                 else:
                     new_words.append(word)
-        self.words = new_words
+
+        return " ".join(new_words)
 
 
     def output(self):
