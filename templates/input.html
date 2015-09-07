@@ -1,37 +1,37 @@
 {% include "header.html" %}
 
 <div class="main">
-<div class="header">
-  <h1>Word Counter</h1>
-</div>
-  <div class="input_area">
-<form method="post">
-  <div class="input">
-    <h3>Input</h3>
-    <textarea name="text" id="input_text" cols="100" placeholder="Please set your text here."></textarea>
-    <br>
-    <label>Threshold：</label><select name="threshold">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-    </select>
-    <br>
-    <input class="pure-button" type="submit">
-  </div>
-  </form>
+    <div class="header">
+        <h1>Word Counter</h1>
     </div>
-  <div class="output">
-    <h3>Result</h3>
-    <table>
-      {% for key in order: %}
-        {% if result[key] > threshold: %}
-          <tr><td>{{ key }}</td> <td>{{ result[key] }}</td></tr>
-        {% endif %}
-      {% endfor %}
-    </table>
-  </div>
-  <div class="footer">
-
-  </div>
+    <div class="input_area">
+        <form method="post">
+            <div class="input">
+                <h3>Input</h3>
+                <textarea name="text" id="input_text" cols="100" placeholder="Please set your text here."></textarea>
+                <br>
+                <label>Threshold：</label><select name="threshold">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <br>
+                <input class="pure-button" type="submit">
+            </div>
+        </form>
+    </div>
+    <div class="output">
+        <h3>Result</h3>
+        <table class="table tables-triped">
+            {% for key in order: %}
+                {% if result[key] > threshold: %}
+                <tr><td>{{ key }}</td> <td>{{ result[key] }}</td></tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+    <div class="footer">
+    </div>
 </div><!-- end .main -->
+
 {% include "footer.html" %}
