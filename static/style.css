@@ -1,13 +1,15 @@
 body{
     background-color: hsl(360, 0%, 96%);
+    color: #444;
+    font-weight: 200;
+    line-height: 1.8em;
 }
 
-
-
-#input_text{
-    width: 400px;
-    height: 300px;
+p{
+    line-height: 1.8em;
+    font-size: 13px;
 }
+
 
 .input{
     padding: 10px 30px;
@@ -48,3 +50,7 @@ body{
     border-top: 1px solid hsl(360, 0%, 90%) ;
 }
 
+#input_text{
+    width: 400px;
+    height: 300px;
+}
